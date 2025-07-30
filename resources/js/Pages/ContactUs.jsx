@@ -1,11 +1,11 @@
 import { Head, Link } from '@inertiajs/react';
 
-export default function Second({ auth }) {
+export default function ContactUs({ auth }) {
     return (
         <>
             <Head>
 
-                <title>Second page</title>
+                <title>Contact Us</title>
 
                 <meta charSet="UTF-8"></meta>
 
@@ -13,10 +13,10 @@ export default function Second({ auth }) {
 
                 <meta name="robots" content="index, follow" />
 
-                <meta name="description" content="Check out the second page" />
+                <meta name="description" content="Check out the " />
 
-                <meta property="og:title" content="Second page" />
-                <meta property="og:description" content="Check out the second page" />
+                <meta property="og:title" content="Contact Us" />
+                <meta property="og:description" content="Check out the " />
                 <meta property="og:image" content="https://example.com/image.jpg" />
                 <meta property="og:url" content="https://example.com" />
 
