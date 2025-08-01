@@ -29,7 +29,6 @@ export default function Home({ auth }) {
                 <meta name="twitter:image" content="https://example.com/image.jpg" />
             </Head>
             <Header auth={auth} />
-            
             <Footer />
         </>
     );
