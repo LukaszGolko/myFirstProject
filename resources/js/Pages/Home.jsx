@@ -3,7 +3,7 @@ import Header from '@/Components/MyOwnComponents/Header';
 import SEOHead from '@/Components/MyOwnComponents/SeoHead';
 
 
-export default function Home({ auth }) {
+export default function Home({ loginRegister = true, auth }) {
     return (
         <>
             <SEOHead
@@ -13,7 +13,7 @@ export default function Home({ auth }) {
                 image = "https://example.com/default-image.jpg"
             />
 
-            <Header auth={auth} />
+            <Header auth={auth} loginRegister={loginRegister} />
 
             <Footer />
         </>

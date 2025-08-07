@@ -4,6 +4,7 @@ import PrimaryButton from '@/Components/PrimaryButton';
 import TextInput from '@/Components/TextInput';
 import GuestLayout from '@/Layouts/GuestLayout';
 import { Head, Link, useForm } from '@inertiajs/react';
+import SEOHead from '@/Components/MyOwnComponents/SeoHead';
 
 export default function Register() {
     const { data, setData, post, processing, errors, reset } = useForm({
@@ -23,7 +24,13 @@ export default function Register() {
 
     return (
         <GuestLayout>
-            <Head title="Register" />
+            <SEOHead
+                title="Register"
+                description="Description register."
+                url="https://example.com"
+                image="https://example.com/default-image.jpg"
+            />
+
 
             <form onSubmit={submit}>
                 <div>
