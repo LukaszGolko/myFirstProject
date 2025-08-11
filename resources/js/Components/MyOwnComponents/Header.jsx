@@ -1,57 +1,62 @@
 import React from 'react';
-import { Link } from '@inertiajs/react';
+import NavLink from '@/Components/NavLink';
+import { usePage } from '@inertiajs/react';
 
-export default function Header({ loginRegister, auth }) {
+export default function Header({ children }) {
+  const { auth } = usePage().props;
+  const user = auth?.user;
+  
   return (
     <header className="w-full bg-white shadow-md px-6 py-4 flex items-center justify-between">
       <div className="flex items-center space-x-4">
-        <Link href="/" className="text-2xl font-bold text-gray-800 hover:text-gray-600 transition-colors">
+        <NavLink href="/" className="text-2xl font-bold text-gray-800 hover:text-gray-600 transition-colors">
           MyLogo
-        </Link>
+        </NavLink>
       </div>
       <nav className="flex items-center space-x-6">
-        <Link
+        <NavLink
           href={route('home')}
-          className="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
+          active={route().current('home')}
         >
           Home
-        </Link>
-        <Link
+        </NavLink>
+        <NavLink
           href={route('about')}
-          className="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
+          active={route().current('about')}
         >
           About Us
-        </Link>
-        <Link
+        </NavLink>
+        <NavLink
           href={route('contact')}
-          className="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
+          active={route().current('contact')}
         >
           Contact Us
-        </Link>
-          {loginRegister && (
-            auth.user ? (
-              <Link
+        </NavLink>
+        {auth.user ? (
+            <>
+              <NavLink
                 href={route('dashboard')}
-                className="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
+                active={route().current('dashboard')}
               >
                 Dashboard
-              </Link>
-            ) : (
-              <>
-                <Link
+              </NavLink>
+              {children}
+            </>
+          ) : (
+            <>
+                <NavLink
                   href={route('login')}
-                  className="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
+                  active={route().current('login')}
                 >
                   Log in
-                </Link>
-                <Link
+                </NavLink>
+                <NavLink
                   href={route('register')}
-                  className="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
+                  active={route().current('register')}
                 >
                   Register
-                </Link>
-              </>
-            )
+                </NavLink>
+            </>
           )}
       </nav>
     </header>

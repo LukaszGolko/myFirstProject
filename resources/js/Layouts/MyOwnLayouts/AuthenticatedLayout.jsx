@@ -2,10 +2,6 @@ import Footer from '@/Components/MyOwnComponents/Footer';
 import Header from '@/Components/MyOwnComponents/Header';
 import SEOHead from '@/Components/MyOwnComponents/SeoHead';
 import { usePage } from '@inertiajs/react';
-import { useState } from 'react';
-import Dropdown from '@/Components/Dropdown';
-import NavLink from '@/Components/NavLink';
-import ResponsiveNavLink from '@/Components/ResponsiveNavLink';
 
 
 export default function AuthenticatedLayout() {

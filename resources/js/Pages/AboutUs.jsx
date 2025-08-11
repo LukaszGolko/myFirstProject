@@ -2,7 +2,7 @@ import Footer from '@/Components/MyOwnComponents/Footer';
 import Header from '@/Components/MyOwnComponents/Header';
 import SEOHead from '@/Components/MyOwnComponents/SeoHead';
 
-export default function ContactUs({ loginRegister = true, auth }) {
+export default function ContactUs() {
     return (
         <>
             <SEOHead
@@ -12,7 +12,7 @@ export default function ContactUs({ loginRegister = true, auth }) {
                 image = "https://example.com/default-image.jpg"
             />
 
-            <Header auth={auth} loginRegister={loginRegister} />
+            <Header />
 
             <Footer />
         </>
