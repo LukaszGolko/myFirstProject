@@ -18,6 +18,10 @@ Route::get('/', function () {
 //     ]);
 // })->name('home');
 
+Route::get('/article', function () {
+    return Inertia::render('Article');
+})->name('article');
+
 Route::get('/contact', function ()  {
     return Inertia::render('ContactUs');
 })->name('contact');
