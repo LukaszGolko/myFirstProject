@@ -1,19 +1,20 @@
-import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
-import { Head } from '@inertiajs/react';
 import DeleteUserForm from './Partials/DeleteUserForm';
 import UpdatePasswordForm from './Partials/UpdatePasswordForm';
 import UpdateSettingsInformationForm from './Partials/UpdateSettingsInformationForm';
+import Footer from '@/Components/MyOwnComponents/Footer';
+import Header from '@/Components/MyOwnComponents/Header';
+import SEOHead from '@/Components/MyOwnComponents/SeoHead';
 
 export default function Edit({ mustVerifyEmail, status }) {
     return (
-        <AuthenticatedLayout
-            header={
-                <h2 className="text-xl font-semibold leading-tight text-gray-800 dark:text-gray-200">
-                    Settings
-                </h2>
-            }
-        >
-            <Head title="Settings" />
+        <>
+            <SEOHead
+                title="Settings"
+                description="Description Settings."
+                url="https://example.com"
+                image="https://example.com/default-image.jpg"
+            />
+            <Header />
 
             <div className="py-12">
                 <div className="mx-auto max-w-7xl space-y-6 sm:px-6 lg:px-8">
@@ -34,6 +35,7 @@ export default function Edit({ mustVerifyEmail, status }) {
                     </div>
                 </div>
             </div>
-        </AuthenticatedLayout>
+            <Footer />
+        </>
     );
 }
