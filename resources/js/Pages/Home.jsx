@@ -27,19 +27,12 @@ export default function Home({ posts = [], categories = [] }) {
                         <div className="space-y-6">
                             {posts.map((post) => (
                                 <article key={post.id} className="flex gap-4 border-b pb-4">
-                                    <img
-                                        src={post.imageUrl}
-                                        alt={post.title}
-                                        className="w-32 h-32 object-cover rounded"
-                                        loading="lazy"
-                                    />
                                     <div>
                                         <h3 className="text-lg font-semibold">
-                                            <a href={post.href} className="hover:underline">
+                                            <a href={post.id} className="hover:underline">
                                                 {post.title}
                                             </a>
                                         </h3>
-                                        <p className="text-gray-600">{post.excerpt}</p>
                                     </div>
                                 </article>
                             ))}
@@ -55,7 +48,7 @@ export default function Home({ posts = [], categories = [] }) {
                         <ul className="space-y-2">
                             {categories.map((cat) => (
                                 <li key={cat.name}>
-                                    <a href={cat.href} className="text-gray-600 hover:text-gray-800">
+                                    <a href={"/?category_id="+cat.id} className="text-gray-600 hover:text-gray-800">
                                         {cat.name}
                                     </a>
                                 </li>
