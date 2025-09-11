@@ -9,6 +9,7 @@ use App\Models\Post;
 
 use Inertia\Inertia;
 
+
 class HomeController extends Controller
 {
     public function index()

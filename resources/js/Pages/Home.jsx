@@ -29,7 +29,7 @@ export default function Home({ posts = [], categories = [] }) {
                                 <article key={post.id} className="flex gap-4 border-b pb-4">
                                     <div>
                                         <h3 className="text-lg font-semibold">
-                                            <a href={post.id} className="hover:underline">
+                                            <a href={route("post.show", post.id)} className="hover:underline">
                                                 {post.title}
                                             </a>
                                         </h3>
